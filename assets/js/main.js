@@ -38,14 +38,11 @@
     const materia = MATERIAS.find((m) => m.id === activeId) || MATERIAS[0];
 
     titleEl.textContent = materia.nombre;
-    libroRefEl.textContent = materia.capitulosLibro
-      ? `Libro CONAMAT · ${materia.capitulosLibro} capítulos`
-      : "";
-
+    
     const disponibles = materia.modulos.filter((m) => m.disponible !== false);
 
     if (disponibles.length === 0) {
-      bodyEl.innerHTML = `<div class="empty">Todavía no hay formularios publicados para ${materia.nombre}. Vuelve después del próximo sábado.</div>`;
+      bodyEl.innerHTML = `<div class="empty">Todavía no hay formularios publicados para ${materia.nombre}</div>`;
       return;
     }
 

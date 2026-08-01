@@ -2,10 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Formulario · Aritmética · Bloque 6 · Potenciación y Radicación</title>
-<link rel="stylesheet" href="../assets/css/styles.css">
-<link rel="stylesheet" href="../assets/css/formulario.css">
+<title>Formulario · Bloque 6 · Potenciación y Radicación</title>
 <script>
   window.MathJax = {
     tex: { inlineMath: [['$','$'], ['\\(','\\)']] },
@@ -13,37 +10,216 @@
   };
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{
+    --ink:#1c1917;
+    --sub:#57534e;
+    --line:#e7e5e4;
+    --accent:#9a3412;
+    --accent-soft:#fde8d8;
+    --bg-card:#fafaf9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#f5f4f2;
+    color:var(--ink);
+    font-family:'Georgia','Iowan Old Style',serif;
+    line-height:1.5;
+  }
+  .page{
+    max-width:920px;
+    margin:0 auto;
+    padding:36px 28px 64px;
+  }
+  header{
+    border-bottom:3px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  header h1{
+    font-size:1.55rem;
+    margin:0;
+    letter-spacing:0.3px;
+  }
+  header .tag{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--accent);
+    font-weight:700;
+  }
+  header .meta{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.78rem;
+    color:var(--sub);
+  }
+  .cols{
+    display:flex;
+    gap:28px;
+    align-items:flex-start;
+  }
+  .cols .col{
+    flex:1;
+    min-width:0;
+  }
+  @media (max-width:760px){
+    .cols{flex-direction:column;}
+  }
+  section.block{
+    break-inside:avoid;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    margin-bottom:18px;
+  }
+  section.block h2{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:0.8px;
+    color:var(--accent);
+    margin:0 0 10px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--line);
+  }
+  .rule{
+    margin:0 0 10px;
+    padding-bottom:10px;
+    border-bottom:1px dashed var(--line);
+  }
+  .rule:last-child{
+    border-bottom:none;
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+  .rule .label{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.74rem;
+    color:var(--sub);
+    margin-bottom:2px;
+  }
+  .rule .formula{
+    font-size:1.02rem;
+  }
+  .note{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.74rem;
+    color:var(--sub);
+    margin-top:3px;
+  }
+  .signbox{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.85rem;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+    margin-top:6px;
+  }
+  .signbox div{
+    background:var(--accent-soft);
+    border-radius:6px;
+    padding:5px 8px;
+    text-align:center;
+  }
+  footer{
+    margin-top:20px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.72rem;
+    color:var(--sub);
+    text-align:center;
+  }
+  footer .qr{
+    display:block;
+    width:70px;
+    height:70px;
+    margin:0 auto 6px;
+    border-radius:4px;
+  }
+  @media print{
+    *{
+      -webkit-print-color-adjust:exact;
+      print-color-adjust:exact;
+    }
+    body{background:#fff;}
+    .page{padding:14mm 12mm 16mm;}
+    .cols{display:block;}
+    .cols .col{width:100%;}
+    section.block{break-inside:avoid;}
+    .pdf-btn{display:none !important;}
+  }
+  @page{
+    margin:0;
+  }
+  .pdf-btn{
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:100;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.4px;
+    text-transform:uppercase;
+    color:#fff;
+    background:var(--accent);
+    border:none;
+    border-radius:999px;
+    padding:10px 18px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    cursor:pointer;
+    box-shadow:0 3px 10px rgba(0,0,0,0.18);
+    transition:transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .pdf-btn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 5px 14px rgba(0,0,0,0.22);
+  }
+  .pdf-btn:active{
+    transform:translateY(0);
+  }
+  .pdf-btn svg{
+    width:14px;
+    height:14px;
+    flex-shrink:0;
+  }
+  @media (max-width:520px){
+    .pdf-btn{
+      top:auto;
+      bottom:16px;
+      right:16px;
+    }
+  }
+</style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <a class="topbar-brand" href="../index.html">
-      <span class="mark">Conamat</span>
-      <span class="title">Formularios del diplomado</span>
-    </a>
-    <span class="topbar-note">Diplomado Máster Matemáticas · Hidalgo — San Cosme</span>
-  </div>
-</div>
-
-<button class="pdf-btn" onclick="window.print()">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
-  Descargar PDF
-</button>
+  <button class="pdf-btn" onclick="window.print()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+    Descargar PDF
+  </button>
 
 <div class="page">
 
-  <div class="breadcrumb"><a href="../index.html">← Todos los formularios</a> · Aritmética</div>
-
-  <div class="doc-header">
+  <header>
     <div>
-      <span class="tag">Aritmética · Bloque 6</span>
+      <span class="tag">Aritmética</span>
       <h1>Potenciación y Radicación</h1>
     </div>
-    <div class="meta">Fuente: Matemáticas Simplificadas, CONAMAT · Cap. 6</div>
-  </div>
+    <div class="meta"></div>
+  </header>
 
   <div class="cols">
+    <div class="col">
 
     <section class="block">
       <h2>1. Potenciación — definición</h2>
@@ -101,6 +277,9 @@
         <div class="formula">$\sqrt[n]{\sqrt[m]{a}} = \sqrt[n\cdot m]{a} = a^{\frac{1}{n\cdot m}}$</div>
       </div>
     </section>
+
+    </div>
+    <div class="col">
 
     <section class="block">
       <h2>6. Simplificación de radicales</h2>
@@ -167,9 +346,13 @@
       </div>
     </section>
 
+    </div>
   </div>
 
-  <footer class="site-footer">Formulario elaborado a partir de Matemáticas Simplificadas (CONAMAT), Capítulo 6 — Aritmética · Uso personal de estudio.</footer>
+  <footer>
+    <img class="qr" src="../formulario.png" alt="Código QR con el enlace a este formulario">
+    <div>Escanea el código para ver este formulario en línea</div>
+  </footer>
 
 </div>
 </body>
