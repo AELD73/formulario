@@ -1,0 +1,160 @@
+/* ============================================================
+   Estilos específicos de las páginas de formulario.
+   Se cargan junto con styles.css (tokens compartidos).
+   ============================================================ */
+
+.page{
+  max-width:920px;
+  margin:0 auto;
+  padding:28px 24px 64px;
+}
+
+.breadcrumb{
+  font-family:var(--sans);
+  font-size:0.76rem;
+  color:var(--sub);
+  margin-bottom:14px;
+}
+.breadcrumb a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+.breadcrumb a:hover{ text-decoration:underline; }
+
+.doc-header{
+  border-bottom:3px solid var(--ink);
+  padding-bottom:14px;
+  margin-bottom:26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.doc-header h1{
+  font-size:1.55rem;
+  margin:0;
+  letter-spacing:0.3px;
+}
+.doc-header .tag{
+  font-family:var(--sans);
+  font-size:0.72rem;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--accent);
+  font-weight:700;
+}
+.doc-header .meta{
+  font-family:var(--sans);
+  font-size:0.78rem;
+  color:var(--sub);
+}
+
+.cols{
+  columns:2;
+  column-gap:28px;
+}
+@media (max-width:760px){
+  .cols{ columns:1; }
+}
+
+section.block{
+  break-inside:avoid;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:16px 18px;
+  margin-bottom:18px;
+}
+section.block h2{
+  font-family:var(--sans);
+  font-size:0.85rem;
+  text-transform:uppercase;
+  letter-spacing:0.8px;
+  color:var(--accent);
+  margin:0 0 10px;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--line);
+}
+
+.rule{
+  margin:0 0 10px;
+  padding-bottom:10px;
+  border-bottom:1px dashed var(--line);
+}
+.rule:last-child{
+  border-bottom:none;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+.rule .label{
+  font-family:var(--sans);
+  font-size:0.74rem;
+  color:var(--sub);
+  margin-bottom:2px;
+}
+.rule .formula{ font-size:1.02rem; }
+
+.note{
+  font-family:var(--sans);
+  font-size:0.74rem;
+  color:var(--sub);
+  margin-top:3px;
+}
+
+.signbox{
+  font-family:var(--sans);
+  font-size:0.85rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:6px;
+}
+.signbox div{
+  background:var(--accent-soft);
+  border-radius:6px;
+  padding:5px 8px;
+  text-align:center;
+}
+
+/* ---- Botón flotante de descarga (impresión / PDF) ---- */
+.pdf-btn{
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:100;
+  font-family:var(--sans);
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.4px;
+  text-transform:uppercase;
+  color:#fff;
+  background:var(--accent);
+  border:none;
+  border-radius:999px;
+  padding:10px 18px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  cursor:pointer;
+  box-shadow:0 3px 10px rgba(0,0,0,0.18);
+  transition:transform 0.12s ease, box-shadow 0.12s ease;
+}
+.pdf-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 5px 14px rgba(0,0,0,0.22);
+}
+.pdf-btn:active{ transform:translateY(0); }
+.pdf-btn svg{ width:14px; height:14px; flex-shrink:0; }
+
+@media (max-width:520px){
+  .pdf-btn{ top:auto; bottom:16px; right:16px; }
+}
+
+@media print{
+  .topbar, .breadcrumb, .pdf-btn{ display:none; }
+  body{ background:#fff; }
+  section.block{ break-inside:avoid; }
+  .page{ padding-top:0; }
+}

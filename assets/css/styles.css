@@ -1,0 +1,79 @@
+/* ============================================================
+   Formularios CONAMAT — hoja de estilos base
+   Tokens compartidos por index.html y por cada formulario.
+   ============================================================ */
+
+:root{
+  --ink:#1c1917;
+  --sub:#57534e;
+  --line:#e7e5e4;
+  --accent:#9a3412;
+  --accent-soft:#fde8d8;
+  --bg:#f5f4f2;
+  --bg-card:#fafaf9;
+  --serif:'Georgia','Iowan Old Style',serif;
+  --sans:'Helvetica Neue',Arial,sans-serif;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--serif);
+  line-height:1.5;
+}
+
+a{ color:inherit; }
+
+/* ---------- Top bar shared across every page ---------- */
+.topbar{
+  background:var(--ink);
+  color:#f5f4f2;
+}
+.topbar-inner{
+  max-width:1080px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.topbar-brand{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  text-decoration:none;
+  color:#f5f4f2;
+}
+.topbar-brand .mark{
+  font-family:var(--sans);
+  font-weight:800;
+  font-size:0.68rem;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  background:var(--accent);
+  color:#fff;
+  padding:3px 7px;
+  border-radius:4px;
+}
+.topbar-brand .title{
+  font-size:1.05rem;
+  letter-spacing:0.2px;
+}
+.topbar-note{
+  font-family:var(--sans);
+  font-size:0.72rem;
+  color:#d6d3d1;
+}
+
+footer.site-footer{
+  margin:40px 0 24px;
+  font-family:var(--sans);
+  font-size:0.72rem;
+  color:var(--sub);
+  text-align:center;
+}

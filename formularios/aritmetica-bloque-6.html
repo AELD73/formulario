@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulario · Aritmética · Bloque 6 · Potenciación y Radicación</title>
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/formulario.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'], ['\\(','\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-brand" href="../index.html">
+      <span class="mark">Conamat</span>
+      <span class="title">Formularios del diplomado</span>
+    </a>
+    <span class="topbar-note">Diplomado Máster Matemáticas · Hidalgo — San Cosme</span>
+  </div>
+</div>
+
+<button class="pdf-btn" onclick="window.print()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+  Descargar PDF
+</button>
+
+<div class="page">
+
+  <div class="breadcrumb"><a href="../index.html">← Todos los formularios</a> · Aritmética</div>
+
+  <div class="doc-header">
+    <div>
+      <span class="tag">Aritmética · Bloque 6</span>
+      <h1>Potenciación y Radicación</h1>
+    </div>
+    <div class="meta">Fuente: Matemáticas Simplificadas, CONAMAT · Cap. 6</div>
+  </div>
+
+  <div class="cols">
+
+    <section class="block">
+      <h2>1. Potenciación — definición</h2>
+      <div class="rule">
+        <div class="formula">$a^n = \underbrace{a \cdot a \cdot a \cdots a}_{n\text{ veces}}$</div>
+        <div class="note">$a$ = base, $n$ = exponente</div>
+      </div>
+      <div class="rule">
+        <div class="formula">$a^{-n} = \dfrac{1}{a^n}$</div>
+      </div>
+      <div class="signbox">
+        <div>par ⇒ resultado (+)<br>$(-6)^4 = +$</div>
+        <div>impar ⇒ resultado (−)<br>$(-6)^5 = -$</div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>2. Leyes de los exponentes</h2>
+      <div class="rule"><div class="formula">$a^m \cdot a^n = a^{m+n}$</div></div>
+      <div class="rule"><div class="formula">$\dfrac{a^m}{a^n} = a^{m-n}$</div></div>
+      <div class="rule"><div class="formula">$a^0 = 1$</div></div>
+      <div class="rule"><div class="formula">$(a^m)^n = a^{m \cdot n}$</div></div>
+      <div class="rule"><div class="formula">$(a \cdot b \cdot c)^m = a^m \cdot b^m \cdot c^m$</div></div>
+      <div class="rule"><div class="formula">$\left(\dfrac{a}{b}\right)^m = \dfrac{a^m}{b^m}$</div></div>
+    </section>
+
+    <section class="block">
+      <h2>3. Ley de los signos (multiplicación)</h2>
+      <div class="signbox">
+        <div>$(+)(+) = +$</div>
+        <div>$(+)(-) = -$</div>
+        <div>$(-)(-) = +$</div>
+        <div>$(-)(+) = -$</div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>4. Radicación — definición</h2>
+      <div class="rule">
+        <div class="formula">$\sqrt[n]{a^m} = a^{\frac{m}{n}}$</div>
+        <div class="note">$a$ = base, $m$ = exponente, $n$ = índice</div>
+      </div>
+      <div class="note">Raíz par de número negativo ⇒ no es real (imaginaria).<br>Raíz impar de número negativo ⇒ es negativa.</div>
+    </section>
+
+    <section class="block">
+      <h2>5. Teoremas de los radicales</h2>
+      <div class="rule">
+        <div class="formula">$\sqrt[n]{a \cdot b \cdot c} = \sqrt[n]{a}\cdot\sqrt[n]{b}\cdot\sqrt[n]{c}$</div>
+      </div>
+      <div class="rule">
+        <div class="formula">$\sqrt[n]{\dfrac{a}{b}} = \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}$</div>
+      </div>
+      <div class="rule">
+        <div class="formula">$\sqrt[n]{\sqrt[m]{a}} = \sqrt[n\cdot m]{a} = a^{\frac{1}{n\cdot m}}$</div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>6. Simplificación de radicales</h2>
+      <div class="note">El exponente de la base dentro del radical debe descomponerse en factores primos; se extrae todo grupo cuyo exponente sea múltiplo del índice.</div>
+      <div class="rule">
+        <div class="formula">$\sqrt{8} = \sqrt{2^3} = \sqrt{2^2 \cdot 2} = 2\sqrt{2}$</div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>7. Suma y resta de radicales</h2>
+      <div class="note">Solo se suman/restan radicales <b>semejantes</b> (mismo índice y mismo radicando).</div>
+      <div class="rule">
+        <div class="formula">$a\sqrt[n]{d} + b\sqrt[n]{d} - c\sqrt[n]{d} = (a+b-c)\sqrt[n]{d}$</div>
+      </div>
+      <div class="note">Si no son semejantes, primero se simplifican; si tras simplificar coinciden, se combinan.</div>
+    </section>
+
+    <section class="block">
+      <h2>8. Multiplicación de radicales</h2>
+      <div class="rule">
+        <div class="label">Mismo índice</div>
+        <div class="formula">$\sqrt[n]{a}\cdot\sqrt[n]{b}\cdot\sqrt[n]{c} = \sqrt[n]{a\cdot b\cdot c}$</div>
+      </div>
+      <div class="rule">
+        <div class="label">Índices distintos</div>
+        <div class="note">Se convierten al <b>mínimo común índice</b> (mcm de los índices) y luego se aplica la fórmula anterior.</div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>9. División de radicales</h2>
+      <div class="rule">
+        <div class="label">Mismo índice</div>
+        <div class="formula">$\dfrac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\dfrac{a}{b}}$</div>
+      </div>
+      <div class="rule">
+        <div class="label">Índices distintos</div>
+        <div class="note">Se transforman al índice común (mcm) y después se dividen los radicandos.</div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>10. Racionalización — denominador</h2>
+      <div class="rule">
+        <div class="label">Monomio</div>
+        <div class="formula">$\dfrac{c}{\sqrt[n]{a^m}} = \dfrac{c\cdot\sqrt[n]{a^{n-m}}}{a}$</div>
+      </div>
+      <div class="rule">
+        <div class="label">Binomio (con al menos una raíz cuadrada) — se multiplica por el conjugado</div>
+        <div class="formula">$\dfrac{c}{a\pm\sqrt{b}} = \dfrac{c(a\mp\sqrt{b})}{a^2-b}$</div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>11. Racionalización — numerador</h2>
+      <div class="rule">
+        <div class="label">Monomio</div>
+        <div class="formula">$\dfrac{\sqrt[n]{a^m}}{c} = \dfrac{a}{c\cdot\sqrt[n]{a^{n-m}}}$</div>
+      </div>
+      <div class="rule">
+        <div class="label">Binomio — se multiplica por el conjugado del numerador</div>
+        <div class="formula">$\dfrac{a\pm\sqrt{b}}{c} = \dfrac{a^2-b}{c(a\mp\sqrt{b})}$</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">Formulario elaborado a partir de Matemáticas Simplificadas (CONAMAT), Capítulo 6 — Aritmética · Uso personal de estudio.</footer>
+
+</div>
+</body>
+</html>

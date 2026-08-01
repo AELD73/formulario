@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formularios · Diplomado Máster Matemáticas · CONAMAT</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .hero{
+    max-width:1080px;
+    margin:0 auto;
+    padding:40px 24px 8px;
+  }
+  .hero .eyebrow{
+    font-family:var(--sans);
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--accent);
+    font-weight:700;
+  }
+  .hero h1{
+    font-size:2rem;
+    margin:8px 0 6px;
+    letter-spacing:0.2px;
+  }
+  .hero p{
+    color:var(--sub);
+    max-width:60ch;
+    margin:0 0 22px;
+  }
+
+  /* ---- Tabs (materias) ---- */
+  .tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+  }
+  .tab{
+    font-family:var(--sans);
+    font-size:0.82rem;
+    font-weight:600;
+    letter-spacing:0.2px;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    color:var(--ink);
+    padding:8px 14px;
+    border-radius:999px;
+    cursor:pointer;
+  }
+  .tab .count{
+    font-weight:400;
+    color:var(--sub);
+    margin-left:5px;
+  }
+  .tab.active{
+    background:var(--ink);
+    border-color:var(--ink);
+    color:#fff;
+  }
+  .tab.active .count{ color:#d6d3d1; }
+  .tab:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  /* ---- Panel de contenido ---- */
+  main{
+    max-width:1080px;
+    margin:0 auto;
+    padding:26px 24px 10px;
+  }
+  .panel-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .panel-head h2{
+    margin:0;
+    font-size:1.3rem;
+  }
+  .panel-head .libro-ref{
+    font-family:var(--sans);
+    font-size:0.74rem;
+    color:var(--sub);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+    gap:14px;
+  }
+
+  .card{
+    display:flex;
+    gap:14px;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px;
+    text-decoration:none;
+    color:var(--ink);
+    transition:border-color .12s ease, transform .12s ease;
+  }
+  .card:hover{
+    border-color:var(--accent);
+    transform:translateY(-2px);
+  }
+  .card .num{
+    font-family:var(--sans);
+    font-weight:800;
+    font-size:1.5rem;
+    color:var(--accent);
+    line-height:1;
+    min-width:34px;
+  }
+  .card .num span{
+    display:block;
+    font-size:0.6rem;
+    font-weight:700;
+    letter-spacing:1px;
+    color:var(--sub);
+    margin-top:2px;
+  }
+  .card h3{
+    margin:0 0 4px;
+    font-size:1rem;
+    line-height:1.3;
+  }
+  .card .fecha{
+    font-family:var(--sans);
+    font-size:0.7rem;
+    color:var(--sub);
+  }
+
+  .empty{
+    font-family:var(--sans);
+    font-size:0.88rem;
+    color:var(--sub);
+    background:var(--bg-card);
+    border:1px dashed var(--line);
+    border-radius:10px;
+    padding:24px;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-brand" href="index.html">
+      <span class="mark">Conamat</span>
+      <span class="title">Formularios del diplomado</span>
+    </a>
+    <span class="topbar-note">Diplomado Máster Matemáticas · Hidalgo — San Cosme</span>
+  </div>
+</div>
+
+<div class="hero">
+  <span class="eyebrow">Material de apoyo</span>
+  <h1>Formularios por materia y bloque</h1>
+  <p>Cada sábado se agrega el formulario del bloque más reciente. Elige la materia y abre el bloque que quieras repasar; cada formulario se puede descargar en PDF desde su propia página.</p>
+</div>
+
+<nav class="hero" style="padding-top:0;">
+  <div class="tabs" id="tabs" role="tablist" aria-label="Materias"></div>
+</nav>
+
+<main>
+  <div class="panel-head">
+    <h2 id="panel-title">—</h2>
+    <span class="libro-ref" id="panel-libro-ref"></span>
+  </div>
+  <div id="panel-body"></div>
+</main>
+
+<footer class="site-footer">
+  Formularios elaborados a partir de <em>Matemáticas Simplificadas</em> (CONAMAT) · Uso personal de estudio.
+</footer>
+
+<script src="assets/js/formularios-data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
