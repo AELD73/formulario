@@ -61,16 +61,11 @@
     color:var(--sub);
   }
   .cols{
-    display:flex;
-    gap:28px;
-    align-items:flex-start;
-  }
-  .cols .col{
-    flex:1;
-    min-width:0;
+    column-count:2;
+    column-gap:28px;
   }
   @media (max-width:760px){
-    .cols{flex-direction:column;}
+    .cols{column-count:1;}
   }
   section.block{
     break-inside:avoid;
@@ -149,10 +144,17 @@
       print-color-adjust:exact;
     }
     body{background:#fff;}
-    .page{padding:14mm 12mm 16mm;}
-    .cols{display:block;}
-    .cols .col{width:100%;}
-    section.block{break-inside:avoid;}
+    .page{padding:10mm 10mm 10mm;}
+    .cols{column-count:2;column-gap:16px;}
+    section.block{break-inside:avoid;padding:11px 13px;margin-bottom:10px;}
+    section.block h2{font-size:0.76rem;margin-bottom:7px;padding-bottom:4px;}
+    .rule{margin-bottom:7px;padding-bottom:7px;}
+    .rule .formula{font-size:0.92rem;}
+    .note{font-size:0.68rem;}
+    header{margin-bottom:14px;padding-bottom:9px;}
+    header h1{font-size:1.3rem;}
+    footer{margin-top:10px;}
+    footer .qr{width:52px;height:52px;}
     .pdf-btn{display:none !important;}
   }
   @page{
@@ -219,7 +221,6 @@
   </header>
 
   <div class="cols">
-    <div class="col">
 
     <section class="block">
       <h2>1. Potenciación — definición</h2>
@@ -277,9 +278,6 @@
         <div class="formula">$\sqrt[n]{\sqrt[m]{a}} = \sqrt[n\cdot m]{a} = a^{\frac{1}{n\cdot m}}$</div>
       </div>
     </section>
-
-    </div>
-    <div class="col">
 
     <section class="block">
       <h2>6. Simplificación de radicales</h2>
@@ -346,7 +344,6 @@
       </div>
     </section>
 
-    </div>
   </div>
 
   <footer>
